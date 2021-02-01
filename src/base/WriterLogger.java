@@ -1,17 +1,23 @@
+package base;
+
 import java.io.PrintWriter;
 
 public class WriterLogger implements Logger {
     private final PrintWriter writer;
 
-    public void println(int level, String msg) {
-        writer.println();
+    public void print(int level, String msg) {
+        writer.print(msg);
     }
 
-    public void logException(Throwable e) {
+    public void println(int level, String msg) {
+        writer.println(msg);
+    }
+
+    public void printException(Throwable e) {
         e.printStackTrace(writer);
     }
 
-    WriterLogger(PrintWriter writer) {
+    public WriterLogger(PrintWriter writer) {
         this.writer = writer;
     }
 }

@@ -1,3 +1,5 @@
+package base;
+
 public interface Logger {
     void print(int level, String msg);
 
